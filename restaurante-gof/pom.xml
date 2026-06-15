@@ -8,12 +8,11 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Sistema Restaurante GOF</name>
-    <description>Projeto academico em Java para estudo de padroes GoF, testes e documentacao.</description>
+    <name>Sistema de Pedidos de Restaurante</name>
+    <description>Projeto acadêmico em Java para estudo de padrões GoF, testes e documentação.</description>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <mockito.version>5.11.0</mockito.version>
