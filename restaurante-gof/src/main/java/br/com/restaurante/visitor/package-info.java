@@ -1,4 +1,4 @@
 /**
- * Contem as classes relacionadas ao padrao comportamental Visitor.
+ * Contém as classes relacionadas ao padrão comportamental Visitor.
  */
 package br.com.restaurante.visitor;

@@ -1,4 +1,4 @@
 /**
- * Contem testes automatizados do sistema de restaurante.
+ * Contém testes automatizados do sistema de restaurante.
  */
 package br.com.restaurante;

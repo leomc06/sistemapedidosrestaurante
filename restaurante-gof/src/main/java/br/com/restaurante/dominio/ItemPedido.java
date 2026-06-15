@@ -1,9 +1,9 @@
-package br.com.restaurante.domain;
+package br.com.restaurante.dominio;
 
 import java.math.BigDecimal;
 
 /**
- * Representa um item incluido em um pedido.
+ * Item escolhido pelo cliente antes de confirmar o pedido.
  */
 public class ItemPedido {
 
@@ -13,17 +13,19 @@ public class ItemPedido {
     /**
      * Cria um item de pedido.
      *
-     * @param itemCardapio item selecionado do cardapio.
+     * @param itemCardapio item selecionado no cardápio.
      * @param quantidade quantidade solicitada.
      */
     public ItemPedido(ItemCardapio itemCardapio, int quantidade) {
         if (itemCardapio == null) {
-            throw new IllegalArgumentException("O item do cardapio e obrigatorio.");
+            throw new IllegalArgumentException("O item do cardápio é obrigatório.");
+        }
+        if (!itemCardapio.isDisponivel()) {
+            throw new IllegalArgumentException("O item precisa estar disponível.");
         }
         if (quantidade <= 0) {
             throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
         }
-
         this.itemCardapio = itemCardapio;
         this.quantidade = quantidade;
     }
@@ -37,9 +39,9 @@ public class ItemPedido {
     }
 
     /**
-     * Calcula o subtotal do item no pedido.
+     * Calcula o subtotal do item.
      *
-     * @return preco unitario multiplicado pela quantidade.
+     * @return preço unitário multiplicado pela quantidade.
      */
     public BigDecimal calcularSubtotal() {
         return itemCardapio.getPreco().multiply(BigDecimal.valueOf(quantidade));

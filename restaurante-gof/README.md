@@ -1,18 +1,18 @@
-# Sistema Restaurante GOF
+# Sistema de Pedidos de Restaurante
 
-Projeto academico em Java com foco em Engenharia de Software, padroes de projeto GoF, testes unitarios, documentacao tecnica e versionamento Git.
+Projeto acadêmico de Engenharia de Software para a Parte 2 da atividade. O sistema é um protótipo em Java, sem interface gráfica e sem banco de dados, com foco em requisitos, padrões GoF, testes, documentação técnica e versionamento.
 
 ## Objetivo
 
-Evoluir um sistema simples de restaurante aplicando:
+Simular o fluxo básico de pedidos por mesa em um restaurante:
 
-- 1 padrao GoF criacional: Abstract Factory;
-- 1 padrao GoF estrutural: Adapter;
-- 1 padrao GoF comportamental: Visitor;
-- testes unitarios com JUnit 5;
-- stubs e mocks com Mockito;
-- JavaDoc;
-- estrategia de versionamento com Git.
+- cliente acessa o cardápio pelo QR Code da mesa;
+- cliente monta e confirma o pedido;
+- cozinha recebe e atualiza o status;
+- garçom acompanha pedidos por mesa;
+- caixa calcula e fecha a conta;
+- gerente mantém o cardápio e consulta relatório;
+- funcionários acessam os painéis com login e senha.
 
 ## Tecnologias
 
@@ -20,56 +20,30 @@ Evoluir um sistema simples de restaurante aplicando:
 - Maven
 - JUnit 5
 - Mockito
-- NetBeans
 
-## Como Abrir No NetBeans
+## Padrões GoF Aplicados
 
-1. Abra o NetBeans.
-2. Clique em `File > Open Project`.
-3. Selecione a pasta `restaurante-gof`.
-4. Aguarde o Maven carregar as dependencias.
-5. Execute a classe `br.com.restaurante.Main`.
+- `Abstract Factory`: criação de regras de atendimento, como taxa de delivery.
+- `Adapter`: integração com um sistema externo simulado de pagamento.
+- `Visitor`: geração de relatório de pedidos sem colocar essa regra dentro da classe `Pedido`.
 
-## Como Executar Pelo Terminal
+## Como Executar
 
 ```bash
 mvn clean compile
 mvn exec:java
 ```
 
-## Como Rodar Os Testes
+## Como Rodar os Testes
 
 ```bash
 mvn test
 ```
 
-## Estrutura Inicial
+O projeto possui exatamente 15 testes unitários em `CasosDeTesteRequisitosTest`, alinhados aos requisitos da planilha.
 
-```text
-restaurante-gof/
-├── pom.xml
-├── README.md
-├── docs/
-│   └── arquitetura.md
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── br/
-│   │           └── com/
-│   │               └── restaurante/
-│   │                   ├── Main.java
-│   │                   ├── adapter/
-│   │                   ├── domain/
-│   │                   ├── factory/
-│   │                   ├── service/
-│   │                   └── visitor/
-│   └── test/
-│       └── java/
-│           └── br/
-│               └── com/
-│                   └── restaurante/
-```
+## Documentação
 
-## Status
-
-Etapa 1: estrutura inicial do projeto criada.
+- `docs/arquitetura.md`: visão arquitetural e padrões GoF.
+- `docs/testes.md`: matriz simples de requisitos e testes.
+- `docs/versionamento.md`: estratégia de branches e commits.
